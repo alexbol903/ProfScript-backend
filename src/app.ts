@@ -1,5 +1,6 @@
 import http from 'http';
 import express from 'express';
+import path from 'path';
 import bodyParser from 'body-parser';
 import log from './config/log';
 import config from './config/config';
@@ -20,6 +21,11 @@ const start = async () => {
   }
 };
 start();
+
+/** Production */
+if (process.env.NODE_ENV === 'production') {
+  router.use(express.static(path.join(__dirname, 'build')));
+}
 
 /** Logging the request */
 router.use((req, res, next) => {
