@@ -12,10 +12,10 @@ const MONGO_OPTIONS = {
   retryWrites: false,
 } as TMongoOptions;
 
-const MONGO_USERNAME = process.env.NODE_MONGO_USERNAME || '';
-const MONGO_PASSWORD = process.env.NODE_MONGO_PASSWORD || '';
-const MONGO_HOST = process.env.NODE_MONGO_HOST || '';
-const MONGO_DB = process.env.NODE_MONGO_DB || '';
+const MONGO_USERNAME = process.env.MONGO_USERNAME || '';
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD || '';
+const MONGO_HOST = process.env.MONGO_HOST || '';
+const MONGO_DB = process.env.MONGO_DB || '';
 
 const MONGO = {
   host: MONGO_HOST,
@@ -26,8 +26,8 @@ const MONGO = {
 } as IMongoDB;
 
 /** Server options */
-const SERVER_HOST = process.env.NODE_SERVER_HOST || 'localhost';
-const SERVER_PORT = process.env.NODE_SERVER_PORT || 4000;
+const SERVER_HOST = process.env.HOST || 'localhost';
+const SERVER_PORT = process.env.PORT || 4000;
 
 const SERVER = {
   hostname: SERVER_HOST,
@@ -35,10 +35,10 @@ const SERVER = {
 } as IServer;
 
 /** Email options */
-const FROM_MAIL = process.env.NODE_FROM_MAIL || '';
-const MAIL_LOGIN = process.env.NODE_MAIL_LOGIN || '';
-const MAIL_PASSWORD = process.env.NODE_MAIL_PASSWORD || '';
-const SCRIPT_CLOUD_LINK = process.env.NODE_SCRIPT_CLOUD_LINK || '';
+const FROM_MAIL = process.env.FROM_MAIL || '';
+const MAIL_LOGIN = process.env.MAIL_LOGIN || '';
+const MAIL_PASSWORD = process.env.MAIL_PASSWORD || '';
+const SCRIPT_CLOUD_LINK = process.env.SCRIPT_CLOUD_LINK || '';
 
 const EMAIL = {
   from: FROM_MAIL,
