@@ -3,7 +3,7 @@ Backend for profscript.ru
 
 ### run
 ```bash
-  npm run start
+  npm run dev
 ```
 
 ### build
