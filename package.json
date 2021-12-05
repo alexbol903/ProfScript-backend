@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "dev": "nodemon src/app.ts",
-    "build": "rm -rf build/ && prettier --write src/ && tsc"
+    "dev": "cross-env NODE_ENV=development nodemon src/app.ts",
+    "build": "cross-env NODE_ENV=production rm -rf build/ && prettier --write src/ && tsc"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "@types/express": "^4.17.13",
     "@types/mongoose": "^5.11.97",
     "@types/nodemailer": "^6.4.4",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
