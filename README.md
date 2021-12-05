@@ -1,7 +1,7 @@
 # ProfScript-backend
 Backend for profscript.ru
 
-### run
+### dev
 ```bash
   npm run dev
 ```

@@ -32,11 +32,11 @@ const sentScriptToEmail = async (email: string): Promise<boolean> => {
 
     const status = parseInt(info.response);
     if (status >= 200 && status < 300) {
-      log.info(NAMESPACE, 'Email is sended');
+      log.info(NAMESPACE, `Script is sended to ${email}`);
       return true;
     }
 
-    log.info(NAMESPACE, 'Email is not sended');
+    log.info(NAMESPACE, `Script not sended to ${email}`);
     return false;
   } catch (err) {
     const error = err as Error;
