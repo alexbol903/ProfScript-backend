@@ -8,5 +8,5 @@ Backend for profscript.ru
 
 ### build
 ```bash
-  npm run build
+  npm start
 ```
