@@ -10,6 +10,25 @@ const createYandexMoneyController = async (req: Request, res: Response, next: Ne
     // TODO: Валидировать входящие данные
     const data = await req.body;
 
+    if (!data.email) {
+      const message = 'Email is empty';
+      log.info(NAMESPACE, message);
+      return res.status(400).json({
+        message
+      })
+    }
+
+    const emailIsExist = await YandexMoneyModel.findOne({ 'email': data.email }).select(['email', 'send_script']);
+
+    if (emailIsExist) {
+      const message = 'Email is exist and script is sended';
+      log.info(NAMESPACE, message);
+      return res.status(204).json({
+        message
+      });
+
+    }
+
     const isSended = await sentScriptToEmail(data.email);
     if (isSended) {
       data['send_script'] = true;
